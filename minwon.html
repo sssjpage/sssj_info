@@ -54,8 +54,7 @@
 
   .back{ display:inline-flex; align-items:center; gap:.3rem; color:var(--brand); font-weight:800; text-decoration:none; font-size:.98rem; margin-bottom:1.2rem; }
 
-  h1{ font-size:1.55rem; margin:0 0 .6rem; }
-  .lede{ color:var(--ink-soft); margin:0 0 1.6rem; }
+  h1{ font-size:1.55rem; margin:0 0 1.4rem; }
 
   .steps{ list-style:none; margin:1.4rem 0; padding:0; counter-reset:step; }
   .steps li{ counter-increment:step; display:flex; gap:.85rem; padding:.9rem 0; border-top:1px solid var(--line); }
@@ -69,16 +68,29 @@
   }
   .steps .t{ font-weight:800; margin:0 0 .15rem; }
   .steps .d{ color:var(--ink-soft); font-size:.98rem; }
-  .steps .d a{ color:var(--brand); font-weight:700; }
+
+  .link-btn{
+    display:inline-flex; align-items:center; gap:.4rem;
+    background:var(--brand); color:var(--brand-ink); text-decoration:none;
+    font-weight:800; padding:.75rem 1.1rem; border-radius:.7rem;
+    min-height:2.9rem; margin-top:.5rem;
+  }
 
   .tip{ font-size:.98rem; color:var(--ink-soft); background:var(--brand-bg); border-radius:.8rem; padding:.9rem 1rem; margin:1rem 0 0; }
 
   .tpl{ border:1px solid var(--line); border-radius:1rem; background:var(--bg); margin:1.3rem 0; overflow:hidden; }
-  .tpl-head{ padding:.8rem 1rem; background:var(--surface-2); font-weight:800; font-size:1.02rem; }
+  .tpl-head{
+    display:flex; align-items:center; justify-content:space-between; gap:.6rem;
+    padding:.7rem .8rem .7rem 1rem; background:var(--surface-2); font-weight:800; font-size:1.02rem;
+  }
+  .copy-btn{
+    flex:none; border:2px solid var(--brand); background:var(--bg); color:var(--brand);
+    font-weight:800; font-size:.85rem; padding:.5rem .8rem; border-radius:.6rem;
+    cursor:pointer; min-height:2.4rem;
+  }
+  .copy-btn.copied{ background:var(--brand); color:var(--brand-ink); border-color:var(--brand); }
   .tpl-body{ padding:1rem 1.1rem; }
-  .tpl-body .ask{ color:var(--ink-soft); margin:0 0 .7rem; }
-  .tpl-body ul{ margin:0; padding-left:1.2em; color:var(--ink); }
-  .tpl-body li{ margin:.35rem 0; }
+  .tpl-body .ask{ color:var(--ink-soft); margin:0; }
   details.tpl-toggle{ margin-top:.9rem; }
   details.tpl-toggle summary{
     cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:center; gap:.4rem;
@@ -106,7 +118,9 @@
     <li>
       <div>
         <div class="t">① 민원 사이트 접속하기</div>
-        <div class="d">아래 <a href="https://www.suwon.go.kr/sw-www/www01/www01-01.jsp" target="_blank" rel="noopener">&lsquo;수원시 민원신청 페이지&rsquo;</a> 파란 글자를 눌러 들어갑니다.</div>
+        <div class="d">아래 버튼을 누르면 접수 사이트로 이동합니다.<br>
+          <a class="link-btn" href="https://www.suwon.go.kr/sw-www/www01/www01-01.jsp" target="_blank" rel="noopener">수원시 민원신청 페이지 (눌러주세요) ›</a>
+        </div>
       </div>
     </li>
     <li>
@@ -117,8 +131,8 @@
     </li>
     <li>
       <div>
-        <div class="t">③ 민원 내용 붙여넣기</div>
-        <div class="d">아래 4가지 민원 중 하나를 골라 &lsquo;전체 문구 보기&rsquo;를 누르고, 그 안의 글을 통째로 복사해서 민원 신청란에 붙여넣습니다. 여러 건을 한 번에 넣으셔도 좋습니다.</div>
+        <div class="t">③ 민원 내용 복사해서 붙여넣기</div>
+        <div class="d">아래 4가지 민원 중 원하는 것의 <strong>&lsquo;복사하기&rsquo;</strong> 버튼을 누르면 글이 자동으로 복사됩니다. 민원 신청란에 붙여넣기만 하면 됩니다. 여러 건을 한 번에 넣으셔도 좋습니다.</div>
       </div>
     </li>
     <li>
@@ -130,12 +144,155 @@
   </ol>
 
   <div class="tpl">
-    <div class="tpl-head">민원 ① 회계 자료 공개 요청</div>
+    <div class="tpl-head">
+      <span>민원 1 · 조합원 지위 승계·정보공개 제한 적법성 확인</span>
+      <button type="button" class="copy-btn" data-target="tpl-1">복사하기</button>
+    </div>
+    <div class="tpl-body">
+      <p class="ask">신규 소유자의 조합원 지위 승계를 조합이 &lsquo;리모델링 동의&rsquo; 재서명 조건으로 막고 있는 것 아닌지, 정보공개도 개인정보를 핑계로 제한하는 것 아닌지 확인해달라는 민원입니다.</p>
+      <details class="tpl-toggle">
+        <summary>전체 문구 보기 (눌러주세요)</summary>
+        <div class="tpl-full" id="tpl-1">신성신안쌍용진흥아파트 리모델링조합의 조합원 지위 승계·명부 변경·정보공개 처리의 적법성 확인 및 행정지도 요청
+
+수원시 영통구 소재 신성신안쌍용진흥아파트 리모델링주택조합의 조합원 지위 승계, 조합원 명부 변경 및 정보 제공 문제와 관련하여 관할 행정청의 명확한 법령 검토 및 행정지도를 요청드립니다.
+
+1. 관련 조합 회신문
+
+본 민원은 다음과 같은 수원시 행정지도에 대한 조합의 공식 회신문과 관련된 후속 민원입니다.
+
+- 발신: 신성신안쌍용진흥아파트 리모델링주택조합
+- 조합 문서번호: 신성신안쌍용진흥아파트 제2026-17호
+- 시행일자: 2026. 8. 14.
+- 수신: 수원시장(공동주택과)
+- 관련 수원시 공문: 공동주택과-38866(2026. 8. 12.)
+- 내용: 신성신안쌍용진흥아파트 리모델링 사업 관련 민원사항 전달 및 행정지도에 대한 조합 회신
+
+수원시에서는 위 회신문 원본을 확인한 후 본 민원을 검토하여 주시기 바랍니다.
+
+2. 조합이 '모든 정보를 공개하고 있다'고 회신한 부분
+
+위 회신문에서 조합은
+
+"관계법령에 따라 모든 정보를 공개하고 있으며, 정보공개 청구 요청의 경우 주택법과 개인정보보호법에 의거 조합원의 개인정보 보호를 최우선으로 하여 처리 중"
+
+이라는 취지로 답변하였습니다.
+
+개인정보 보호가 중요하다는 점에는 전적으로 동의합니다.
+
+다만 개인정보 보호와 조합 사업에 관한 정보공개는 구별할 필요가 있다고 생각합니다.
+
+시공사와의 계약, 공사비, 사업비 집행, 자금계획, 총회 의결자료 등은 조합원 본인의 재산상 부담과 직접 관련된 정보입니다.
+
+문서 일부에 다른 조합원의 성명·전화번호·주소 등 개인정보가 포함되어 있다면 그 부분을 삭제하거나 가림 처리하는 방법으로 개인정보를 보호하면서 나머지 사업정보를 공개할 수도 있을 것입니다.
+
+따라서 조합이 단순히 '개인정보 보호'를 이유로 자료 전체 또는 핵심적인 사업정보의 제공을 제한할 수 있는 범위가 어디까지인지 수원시의 명확한 판단을 요청드립니다.
+
+3. 소유권을 취득한 신규 소유자의 조합원 지위 승계 문제
+
+현행 주택법 시행령에서는 리모델링주택조합 설립에 동의한 자로부터 건축물을 취득한 자는 리모델링주택조합 설립에 동의한 것으로 보는 것으로 알고 있습니다.
+
+즉 종전 소유자로부터 해당 주택을 적법하게 취득한 신규 소유자는 법령에 따라 조합원 지위를 승계하는 구조로 이해하고 있습니다.
+
+그럼에도 실제 승계 과정에서 신규 소유자가 조합에 소유권 변경 사실을 알리고 조합원 명부의 변경을 요구하면 조합 측에서 별도의 '승계확인서' 등의 작성을 요구하고 있고, 그 서류에는 다시 '리모델링에 동의한다'는 취지의 문구가 포함되어 있습니다.
+
+더욱이 해당 서류를 작성해야 조합원 명부 등을 변경해 준다는 취지로 운영될 경우,
+
+법령에 의해 승계되는 조합원의 지위를 조합이 별도의 의사표시를 조건으로 제한하는 결과가 될 수 있다고 생각합니다.
+
+이에 대해 수원시의 명확한 판단을 요청드립니다.
+
+4. 승계확인서에 다시 '리모델링 동의'를 요구할 수 있는지
+
+조합원의 본인확인, 소유권 취득 확인, 연락처 및 우편물 수령주소 확인 등을 위해 행정적인 확인서를 작성하게 하는 것과,
+
+이미 법령에 의해 승계된 조합원에게 다시 '리모델링에 동의한다'는 의사표시를 요구하는 것은 별개의 문제라고 생각합니다.
+
+따라서 다음 사항을 구분하여 검토하여 주시기 바랍니다.
+
+첫째, 조합이 신규 소유자에게 등기사항증명서 등 소유권 확인자료와 연락처 확인자료 제출을 요구할 수 있는지
+
+둘째, 이를 넘어 신규 소유자에게 별도로 '리모델링 사업에 동의한다'는 의사표시를 요구할 법적 근거가 있는지
+
+셋째, 해당 동의문구에 서명하지 않았다는 이유로 조합원 명부 변경, 우편물 발송, 정보제공, 총회 통지 또는 조합원 권리행사를 보류하거나 제한할 수 있는지입니다.
+
+5. 조합원 명부 및 우편물 수령주소 변경 지연 문제
+
+부동산 등기 등을 통해 소유권 변경이 객관적으로 확인되었음에도 조합 내부의 변경인가나 행정처리 등을 이유로 종전 소유자에게 계속 우편물과 조합 정보를 보내게 된다면 신규 소유자는 사업의 중요 사항을 제때 알 수 없게 됩니다.
+
+특히 총회, 분담금, 공사비 변경, 계약, 자금조달 등 중요한 정보를 종전 소유자의 주소로 계속 발송한다면 신규 조합원의 알 권리와 의결권 행사에 직접적인 문제가 발생할 수 있습니다.
+
+따라서 소유권 변경 사실이 객관적으로 확인된 경우에는 조합 내부의 행정절차와 별개로 조합이 관리하는 연락처 및 우편물 수령주소를 신속히 변경하여 실제 권리자인 현재 소유자에게 중요 정보가 전달되도록 해야 하는 것인지 확인하여 주시기 바랍니다.
+
+6. 수원시에 구체적인 답변을 요청하는 사항
+
+본 민원에 대해서는 조합의 의견을 다시 전달하는 방식이 아니라 관계 법령에 따른 수원시의 직접적인 판단을 요청드립니다.
+
+가. 리모델링주택조합 설립에 동의한 종전 소유자로부터 주택을 취득한 신규 소유자의 조합원 지위가 소유권 취득으로 법령상 승계되는지
+
+나. 위와 같은 신규 소유자에게 조합이 별도로 '리모델링에 동의한다'는 내용의 승계확인서 또는 동의서를 작성하도록 요구할 법적 근거가 있는지
+
+다. 신규 소유자가 해당 '리모델링 동의' 문구에 서명하지 않았다는 이유로 조합원 명부 변경을 거부 또는 보류할 수 있는지
+
+라. 이를 이유로 총회 통지, 조합 관련 우편물, 사업정보 제공 또는 기타 조합원 권리행사를 제한할 수 있는지
+
+마. 소유권 변경 사실이 등기사항증명서 등으로 확인된 경우 조합이 조합원 명부, 연락처 및 우편물 수령주소를 어느 시점에 변경하여야 하는지
+
+바. 조합 내부의 변경인가·변경신고 등 행정절차가 완료되지 않았다는 이유로 실제 신규 소유자에 대한 정보제공을 지연할 수 있는지
+
+사. 개인정보가 포함된 조합 관련 자료에 대하여 개인정보 부분을 가림 처리한 후 나머지 부분을 공개하는 방식이 가능한지
+
+아. 개인정보보호법을 이유로 계약서·공사비 자료·사업비 집행자료·총회 의결자료 등 조합 사업 관련 문서 전체의 공개 또는 열람을 거부할 수 있는지
+
+자. 조합원이 자신의 경제적 부담을 판단하는 데 필요한 공사비, 사업비, 자금계획, 대출조건, 분담금 산출근거 등의 자료 제공까지 개인정보보호를 이유로 제한할 수 있는지
+
+7. 조합 회신 내용의 사실관계 확인도 요청
+
+조합은 수원시에 제출한 공식 회신문에서
+
+"관계법령에 따라 모든 정보를 공개하고 있다"
+
+는 취지로 답변하였습니다.
+
+따라서 단순히 이 답변을 사실로 전제하지 마시고 실제로
+
+- 어떠한 자료를 공개하고 있는지
+- 조합원에게 공개를 요구하는 절차가 과도하지 않은지
+- 개인정보를 이유로 공개하지 않는 자료가 무엇인지
+- 신규 소유자가 정보제공 대상에서 누락되는 사례가 없는지
+- 소유권 이전 후에도 종전 소유자의 주소로 중요 우편물이 발송되고 있지는 않은지
+
+등을 확인해 주시기 바랍니다.
+
+8. 요청 취지
+
+본 민원의 핵심은 조합의 답변을 다시 듣기 위한 것이 아닙니다.
+
+조합은 이미 수원시의 행정지도에 대해 공식적으로 자신들의 처리방식이 관계법령에 따른 것이라는 취지의 회신을 하였습니다.
+
+따라서 이번에는 관할 행정청에서 조합의 주장이 실제 관계 법령에 부합하는지를 검토하여,
+
+① 신규 소유자의 조합원 지위는 언제 승계되는지
+② 별도의 리모델링 동의를 다시 요구할 수 있는지
+③ 이를 조합원 명부 변경 및 정보제공의 조건으로 할 수 있는지
+④ 개인정보보호를 이유로 조합 사업정보를 제한할 수 있는 범위가 어디까지인지
+
+각 항목에 대해 명확하게 답변하여 주시기 바랍니다.
+
+위법하거나 부적절한 운영이 확인될 경우 조합에 시정을 요구하는 추가 행정지도도 함께 요청드립니다.</div>
+      </details>
+    </div>
+  </div>
+
+  <div class="tpl">
+    <div class="tpl-head">
+      <span>민원 2 · 회계 자료 공개 요청</span>
+      <button type="button" class="copy-btn" data-target="tpl-2">복사하기</button>
+    </div>
     <div class="tpl-body">
       <p class="ask">조합의 돈이 어디에 어떻게 쓰였는지 자료를 보여달라는 민원입니다.</p>
       <details class="tpl-toggle">
         <summary>전체 문구 보기 (눌러주세요)</summary>
-        <div class="tpl-full">안녕하세요.
+        <div class="tpl-full" id="tpl-2">안녕하세요.
 신성신안쌍용신흥아파트 리모델링주택조합의 조합원으로서 회계감사 및 자금 관련 자료의 공개·열람에 대해 확인하고자 민원을 신청합니다.
 
 요청 자료
@@ -157,12 +314,15 @@
   </div>
 
   <div class="tpl">
-    <div class="tpl-head">민원 ② 총회 절차 공정성 요청</div>
+    <div class="tpl-head">
+      <span>민원 3 · 총회 절차 공정성 요청</span>
+      <button type="button" class="copy-btn" data-target="tpl-3">복사하기</button>
+    </div>
     <div class="tpl-body">
       <p class="ask">투표와 개표를 공정하게 진행해달라는 민원입니다.</p>
       <details class="tpl-toggle">
         <summary>전체 문구 보기 (눌러주세요)</summary>
-        <div class="tpl-full">수원시 영통구 신성신안쌍용진흥 아파트 리모델링주택조합의 분담금 관련 총회를 앞두고, 총회 의결 과정의 공정성과 투명성 확보를 요청드립니다.
+        <div class="tpl-full" id="tpl-3">수원시 영통구 신성신안쌍용진흥 아파트 리모델링주택조합의 분담금 관련 총회를 앞두고, 총회 의결 과정의 공정성과 투명성 확보를 요청드립니다.
 
 일시 : 9월 12일
 
@@ -192,12 +352,15 @@
   </div>
 
   <div class="tpl">
-    <div class="tpl-head">민원 ③ 정족수 기준 사전 확인 요청</div>
+    <div class="tpl-head">
+      <span>민원 4 · 정족수 기준 사전 확인 요청</span>
+      <button type="button" class="copy-btn" data-target="tpl-4">복사하기</button>
+    </div>
     <div class="tpl-body">
       <p class="ask">총회가 성립되는 &lsquo;최소 인원 기준&rsquo;을 총회 전에 미리 밝혀달라는 민원입니다.</p>
       <details class="tpl-toggle">
         <summary>전체 문구 보기 (눌러주세요)</summary>
-        <div class="tpl-full">신성신안쌍용진흥아파트 리모델링주택조합의 조합원으로서 2026년 9월 12일 예정된 분담금 관련 총회의 의결정족수 및 조합원 수 산정기준에 대하여 사전 확인을 요청드립니다.
+        <div class="tpl-full" id="tpl-4">신성신안쌍용진흥아파트 리모델링주택조합의 조합원으로서 2026년 9월 12일 예정된 분담금 관련 총회의 의결정족수 및 조합원 수 산정기준에 대하여 사전 확인을 요청드립니다.
 
 이번 총회는 조합원에게 상당한 재산상 부담을 발생시킬 수 있는 중요한 총회인 만큼, 총회가 개최된 이후 의결정족수에 관한 분쟁이 발생하지 않도록 총회 전에 정확한 기준을 확인할 필요가 있다고 생각합니다.
 
@@ -234,72 +397,6 @@
     </div>
   </div>
 
-  <div class="tpl">
-    <div class="tpl-head">민원 ④ 총회 식사 제공 관련 확인 요청</div>
-    <div class="tpl-body">
-      <p class="ask">총회 참석자에게 식사를 제공한다는데, 그 비용을 조합비로 쓰는 게 맞는지 확인해달라는 민원입니다.</p>
-      <details class="tpl-toggle">
-        <summary>전체 문구 보기 (눌러주세요)</summary>
-        <div class="tpl-full">민원 제목
-리모델링 분담금 총회 음식점 대관 및 식사 제공 사실확인 및 조합비 지출·총회 공정성 적정성 점검 요청
-
-신성신안쌍용진흥아파트 리모델링주택조합이 분담금 관련 총회를 음식점을 대관하여 개최하고, 총회 참석자들에게 식사를 제공할 예정이라는 내용을 접하였습니다.
-
-해당 내용이 실제로 확정된 사항인지 조합원 입장에서는 정확히 확인하기 어려우므로, 우선 관할기관에서 조합을 통해 사실관계를 확인하여 주시기를 요청드립니다.
-
-확인 결과 음식점 대관 및 참석자 식사 제공이 사실이라면 다음 사항을 함께 확인하여 주시기 바랍니다.
-
-1. 사실관계 확인
-- 음식점을 대관하여 분담금 총회를 개최하는 것이 사실인지
-- 총회 참석자에게 식사를 제공할 예정인지
-- 식사 제공 대상과 방식은 어떻게 되는지
-- 식사가 총회 참석 여부와 관계없이 제공되는 것인지, 총회 참석자에 한하여 제공되는 것인지
-
-2. 비용의 재원 확인
-- 음식점 대관료 및 식사비를 조합비에서 지출하는지
-- 조합비가 아니라면 해당 비용을 누가 부담하는지
-- 시공사·협력업체·용역업체 등 제3자가 비용을 부담하는 부분은 없는지
-- 전체 예상 지출금액은 얼마인지
-
-3. 조합비 지출 근거 및 절차 확인
-- 조합비로 지출하는 경우 현재 승인된 예산 및 조합규약상 어떠한 근거로 집행되는지
-- 해당 지출을 결정하기 위해 필요한 내부 의결절차를 적법하게 거쳤는지
-
-4. 중대한 분담금 의결과 식사 제공의 적정성 및 공정성 확인
-이번 총회는 단순한 친목행사나 설명회가 아니라 조합원 개개인에게 상당한 재산상 부담을 발생시킬 수 있는 분담금 관련 의사결정이 이루어지는 중요한 총회입니다.
-이러한 총회를 음식점에서 개최하면서 참석자에게 식사를 제공하는 방식이 과연 중대한 재산상 의사결정을 다루는 총회의 공정성과 중립성 측면에서 적절한 것인지 확인하여 주시기 바랍니다.
-
-특히,
-- 식사 제공이 단순히 참석자의 편의를 위한 것인지, 총회 참석을 적극적으로 유도하기 위한 목적이나 효과가 있는 것은 아닌지
-- 총회 참석자에게만 식사 등의 경제적 편익을 제공하는 것이 조합원들의 자유로운 참석 여부 결정 또는 의결권 행사에 영향을 미칠 우려는 없는지
-- 분담금이라는 중대한 안건의 의결과 식사 제공이 결부되는 방식이 총회의 객관성 및 공정성에 대한 불필요한 오해나 논란을 발생시킬 우려는 없는지
-- 이러한 방식의 총회 운영이 관계 법령 및 현재 인가된 조합규약상 적정한 것인지
-확인하여 주시기 바랍니다.
-
-조합원의 재산상 부담을 결정하는 중요한 총회라면 무엇보다 조합원의 자유롭고 독립적인 의사결정이 보장되어야 한다고 생각합니다.
-따라서 참석자에게 식사를 제공하면서 총회를 진행하는 방식이 이러한 원칙에 부합하는지에 대해서도 관할기관의 구체적인 검토와 답변을 요청드립니다.
-
-5. 계약 및 지출자료 확인
-- 음식점 대관 및 식사 제공과 관련한 계약서, 견적서, 내부 결재·의결자료 및 실제 지출증빙 등이 적절하게 작성·보존되는지 확인하여 주시기 바랍니다.
-
-본 민원은 음식점에서 총회를 개최하거나 식사를 제공하는 행위가 위법하다고 단정하여 제기하는 것이 아닙니다.
-다만 조합원들에게 추가적인 재산상 부담을 결정하는 총회에서 식사를 제공하는 것이 사실이라면, 단순히 비용지출의 적정성만의 문제가 아니라 총회 참석 및 의사결정의 공정성과 중립성 측면에서도 적절한 방식인지 확인할 필요가 있다고 판단됩니다.
-
-따라서 수원시에서는 조합 측에 해당 사실관계를 확인하여 주시고,
-① 음식점 대관 및 식사 제공 여부
-② 식사 제공 대상 및 조건
-③ 비용 부담 주체 및 예상금액
-④ 조합비 사용 여부와 지출근거
-⑤ 관련 내부 의결절차 이행 여부
-⑥ 식사 제공을 통한 총회 참석 유도 여부 및 총회 공정성 측면에서의 적정성
-⑦ 관계 법령 및 조합규약상 적정성
-을 확인한 결과를 구체적으로 답변하여 주시기 바랍니다.
-
-확인 과정에서 관계 법령 또는 조합규약상 부적정한 사항이 발견되거나 총회의 공정한 의사결정에 영향을 미칠 우려가 있다고 판단될 경우에는 총회 개최 및 비용 집행 전에 필요한 행정지도 또는 조치를 검토하여 주시기를 요청드립니다.</div>
-      </details>
-    </div>
-  </div>
-
   <p class="tip">4건 모두 접수하셔도 좋습니다. 접수한 뒤에는 채팅방에 &ldquo;민원 접수했어요&rdquo;라고만 남겨주셔도 큰 힘이 됩니다.</p>
 
   <footer>
@@ -323,5 +420,45 @@
     try{
       if (localStorage.getItem('sssj-fontsize') === 'big') setSize(true);
     }catch(e){}
+  })();
+
+  (function(){
+    function fallbackCopy(text){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      try{ document.execCommand('copy'); }catch(e){}
+      document.body.removeChild(ta);
+    }
+    document.querySelectorAll('.copy-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var target = document.getElementById(btn.getAttribute('data-target'));
+        var text = target.textContent;
+        var details = btn.closest('.tpl').querySelector('details');
+        if (details) details.open = true;
+        function showCopied(){
+          var original = btn.textContent;
+          btn.textContent = '복사됨!';
+          btn.classList.add('copied');
+          setTimeout(function(){
+            btn.textContent = original;
+            btn.classList.remove('copied');
+          }, 1500);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(showCopied).catch(function(){
+            fallbackCopy(text);
+            showCopied();
+          });
+        } else {
+          fallbackCopy(text);
+          showCopied();
+        }
+      });
+    });
   })();
 </script>
