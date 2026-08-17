@@ -55,9 +55,17 @@
   h1{ font-size:1.55rem; margin:0 0 1.4rem; }
 
   .faq-item{ padding:1.1rem 0; border-bottom:1px solid var(--line); }
-  .faq-item .q{ font-weight:800; margin:0 0 .5rem; display:flex; gap:.5rem; }
-  .faq-item .q .qmark{ color:var(--stop); flex:none; }
-  .faq-item .a{ color:var(--ink-soft); margin:0; padding-left:1.55em; }
+  .faq-item summary{
+    font-weight:800; margin:0; display:flex; gap:.5rem; align-items:baseline;
+    cursor:pointer; list-style:none;
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary::after{
+    content:'+'; margin-left:auto; flex:none; color:var(--brand); font-weight:900; font-size:1.15em;
+  }
+  .faq-item[open] summary::after{ content:'\2212'; }
+  .faq-item .qmark{ color:var(--stop); flex:none; }
+  .faq-item .a{ color:var(--ink-soft); margin:.7rem 0 0; padding-left:1.55em; }
   .faq-item .a a{ color:var(--brand); font-weight:700; }
   .faq-item .a .highlight{ color:var(--stop); font-weight:800; }
 
@@ -74,26 +82,26 @@
   <a class="back" href="index.html">‹ 처음으로</a>
   <h1>궁금한 점들</h1>
 
-  <div class="faq-item">
-    <p class="q"><span class="qmark">Q.</span>리모델링을 원하지 않아요. 처음 왔는데 뭐부터 하면 되나요?</p>
+  <details class="faq-item">
+    <summary><span class="qmark">Q.</span>리모델링을 원하지 않아요. 처음 왔는데 뭐부터 하면 되나요?</summary>
     <p class="a">맨 앞 페이지의 2가지(<span class="highlight">무제출·무응답</span>)만 지켜주셔도 충분합니다. 여유가 되시면 <a href="minwon.html">&lsquo;민원 제기하는 방법&rsquo;</a>의 민원 ①도 넣어주세요.</p>
-  </div>
-  <div class="faq-item">
-    <p class="q"><span class="qmark">Q.</span>왜 총회에 참석하면 안 되나요?</p>
+  </details>
+  <details class="faq-item">
+    <summary><span class="qmark">Q.</span>왜 총회에 참석하면 안 되나요?</summary>
     <p class="a">총회는 정해진 인원이 채워져야 성립합니다. 반대하러 가시더라도 &lsquo;참석&rsquo;으로 계산되면 오히려 총회가 열리는 데 도움을 주는 셈이 됩니다.</p>
-  </div>
-  <div class="faq-item">
-    <p class="q"><span class="qmark">Q.</span>이번 분담금 총회가 가결되면?</p>
+  </details>
+  <details class="faq-item">
+    <summary><span class="qmark">Q.</span>이번 분담금 총회가 가결되면?</summary>
     <p class="a">분담금 문제가 현실이 되고, 이주(이사)를 나가야 합니다. 내 집과 내 돈이 걸린 중요한 총회입니다.</p>
-  </div>
-  <div class="faq-item">
-    <p class="q"><span class="qmark">Q.</span>최근 매수자입니다. 조합에 방문해야 할까요?</p>
+  </details>
+  <details class="faq-item">
+    <summary><span class="qmark">Q.</span>최근 매수자입니다. 조합에 방문해야 할까요?</summary>
     <p class="a">아니오. 아예 조합과 접촉하지 말아주시길 바랍니다. <span class="highlight">무제출 무응답</span>만 지켜주시면 됩니다.</p>
-  </div>
-  <div class="faq-item">
-    <p class="q"><span class="qmark">Q.</span>리모델링 대책을 위한 오프라인 모임이 진행되나요?</p>
+  </details>
+  <details class="faq-item">
+    <summary><span class="qmark">Q.</span>리모델링 대책을 위한 오프라인 모임이 진행되나요?</summary>
     <p class="a">매주 일요일마다 오프라인 모임이 예정되어 있습니다. 정확한 안내는 <a href="https://open.kakao.com/o/g9qrk5Hi" target="_blank" rel="noopener">오픈카톡방</a>에 공지될 예정입니다.</p>
-  </div>
+  </details>
 
   <footer>
     <p>이 페이지는 리모델링에 반대하는 조합원들이 자율적으로 만든 안내 자료이며, 조합의 공식 입장이 아닙니다.</p>
