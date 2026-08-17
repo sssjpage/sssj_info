@@ -78,29 +78,40 @@
 
   .tip{ font-size:.98rem; color:var(--ink-soft); background:var(--brand-bg); border-radius:.8rem; padding:.9rem 1rem; margin:1rem 0 0; }
 
-  .tpl{ border:1px solid var(--line); border-radius:1rem; background:var(--bg); margin:1.3rem 0; overflow:hidden; }
-  .tpl-head{ padding:.8rem 1rem; background:var(--surface-2); font-weight:800; font-size:1.02rem; }
-  .tpl-body{ padding:1rem 1.1rem; }
-  .tpl-body .ask{ color:var(--ink-soft); margin:0 0 .9rem; }
+  .section-label{ font-size:1.15rem; font-weight:900; color:var(--ink); margin:2.4rem 0 1.2rem; padding-top:1.6rem; border-top:2px solid var(--line); }
 
-  .copy-row{ display:flex; gap:.6rem; }
-  .copy-btn{
-    flex:1; border:2px solid var(--brand); background:var(--bg); color:var(--brand);
-    font-weight:800; font-size:.95rem; padding:.75rem .6rem; border-radius:.7rem;
-    cursor:pointer; min-height:2.9rem;
+  .tpl{ border:1px solid var(--line); border-radius:1.1rem; background:var(--bg); margin:1.7rem 0; overflow:hidden; box-shadow:0 2px 10px -6px rgba(16,24,40,.25); }
+  .tpl-head{ padding:1rem 1.1rem; background:var(--brand); color:var(--brand-ink); font-weight:800; font-size:1.03rem; }
+  .tpl-body{ padding:1.2rem 1.15rem 1.3rem; }
+  .tpl-body .ask{
+    color:var(--ink); font-weight:600; margin:0 0 1.1rem;
+    border-left:3px solid var(--brand); padding-left:.75rem;
   }
-  .copy-btn.copied{ background:var(--brand); color:var(--brand-ink); }
 
-  details.tpl-toggle{ margin-top:.9rem; }
+  .copy-row{ display:flex; flex-direction:column; gap:.6rem; }
+  .copy-btn{
+    border:2px solid var(--brand); background:var(--bg); color:var(--brand);
+    font-weight:800; font-size:1rem; padding:.85rem .9rem; border-radius:.8rem;
+    cursor:pointer; min-height:3.1rem; width:100%;
+  }
+  .copy-btn.copy-btn--primary{ background:var(--brand); color:var(--brand-ink); }
+  .copy-btn.copied{ background:var(--stop); border-color:var(--stop); color:var(--stop-ink); }
+
+  details.tpl-toggle{ margin-top:1rem; }
   details.tpl-toggle summary{
     cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:center; gap:.4rem;
-    font-weight:800; color:var(--brand); background:var(--brand-bg);
-    border-radius:.7rem; padding:.7rem 1rem; min-height:2.7rem;
+    font-weight:700; color:var(--ink-soft); background:var(--surface-2);
+    border:1px solid var(--line); border-radius:.7rem; padding:.7rem 1rem; min-height:2.7rem; font-size:.92rem;
   }
   details.tpl-toggle summary::-webkit-details-marker{ display:none; }
-  .preview-label{ font-size:.82rem; font-weight:800; color:var(--ink-faint); margin:.9rem 0 .3rem; }
-  .tpl-full{ font-size:.92rem; white-space:pre-wrap; color:var(--ink); background:var(--surface-2); border:1px dashed var(--line); border-radius:.8rem; padding:.9rem 1rem; margin:0; max-height:16rem; overflow-y:auto; }
-  .tpl-full.title-preview{ max-height:none; font-weight:700; }
+  .preview-label{
+    display:inline-block; font-size:.72rem; font-weight:800; color:var(--brand);
+    background:var(--brand-bg); padding:.2rem .6rem; border-radius:1rem;
+    margin:1rem 0 .4rem;
+  }
+  .preview-label:first-of-type{ margin-top:.9rem; }
+  .tpl-full{ font-size:.92rem; white-space:pre-wrap; color:var(--ink); background:var(--surface-2); border:1px solid var(--line); border-radius:.8rem; padding:.9rem 1rem; margin:0; max-height:16rem; overflow-y:auto; }
+  .tpl-full.title-preview{ max-height:none; font-weight:800; background:none; border:none; padding:0; font-size:1.05rem; }
 
   footer{ margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); font-size:.8rem; color:var(--ink-faint); }
 </style>
@@ -142,13 +153,15 @@
     </li>
   </ol>
 
+  <h2 class="section-label">아래 민원 중 골라서 접수하세요</h2>
+
   <div class="tpl">
     <div class="tpl-head">민원 1 · 조합원 지위 승계·정보공개 제한 적법성 확인</div>
     <div class="tpl-body">
       <p class="ask">신규 소유자의 조합원 지위 승계를 조합이 &lsquo;리모델링 동의&rsquo; 재서명 조건으로 막고 있는 것 아닌지, 정보공개도 개인정보를 핑계로 제한하는 것 아닌지 확인해달라는 민원입니다.</p>
       <div class="copy-row">
         <button type="button" class="copy-btn" data-target="tpl-1-title">민원 제목 복사하기</button>
-        <button type="button" class="copy-btn" data-target="tpl-1-body">민원 문구 복사하기</button>
+        <button type="button" class="copy-btn copy-btn--primary" data-target="tpl-1-body">민원 문구 복사하기</button>
       </div>
       <details class="tpl-toggle">
         <summary>전체 내용 보기 (눌러주세요)</summary>
@@ -290,7 +303,7 @@
       <p class="ask">조합의 돈이 어디에 어떻게 쓰였는지 자료를 보여달라는 민원입니다.</p>
       <div class="copy-row">
         <button type="button" class="copy-btn" data-target="tpl-2-title">민원 제목 복사하기</button>
-        <button type="button" class="copy-btn" data-target="tpl-2-body">민원 문구 복사하기</button>
+        <button type="button" class="copy-btn copy-btn--primary" data-target="tpl-2-body">민원 문구 복사하기</button>
       </div>
       <details class="tpl-toggle">
         <summary>전체 내용 보기 (눌러주세요)</summary>
@@ -324,7 +337,7 @@
       <p class="ask">투표와 개표를 공정하게 진행해달라는 민원입니다.</p>
       <div class="copy-row">
         <button type="button" class="copy-btn" data-target="tpl-3-title">민원 제목 복사하기</button>
-        <button type="button" class="copy-btn" data-target="tpl-3-body">민원 문구 복사하기</button>
+        <button type="button" class="copy-btn copy-btn--primary" data-target="tpl-3-body">민원 문구 복사하기</button>
       </div>
       <details class="tpl-toggle">
         <summary>전체 내용 보기 (눌러주세요)</summary>
@@ -366,7 +379,7 @@
       <p class="ask">총회가 성립되는 &lsquo;최소 인원 기준&rsquo;을 총회 전에 미리 밝혀달라는 민원입니다.</p>
       <div class="copy-row">
         <button type="button" class="copy-btn" data-target="tpl-4-title">민원 제목 복사하기</button>
-        <button type="button" class="copy-btn" data-target="tpl-4-body">민원 문구 복사하기</button>
+        <button type="button" class="copy-btn copy-btn--primary" data-target="tpl-4-body">민원 문구 복사하기</button>
       </div>
       <details class="tpl-toggle">
         <summary>전체 내용 보기 (눌러주세요)</summary>
