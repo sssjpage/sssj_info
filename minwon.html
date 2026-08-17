@@ -66,39 +66,41 @@
     display:flex; align-items:center; justify-content:center;
     font-weight:800; font-size:.95rem;
   }
-  .steps .t{ font-weight:800; margin:0 0 .15rem; }
+  .steps .t{ font-weight:800; margin:0 0 .3rem; }
   .steps .d{ color:var(--ink-soft); font-size:.98rem; }
 
   .link-btn{
     display:inline-flex; align-items:center; gap:.4rem;
     background:var(--brand); color:var(--brand-ink); text-decoration:none;
     font-weight:800; padding:.75rem 1.1rem; border-radius:.7rem;
-    min-height:2.9rem; margin-top:.5rem;
+    min-height:2.9rem;
   }
 
   .tip{ font-size:.98rem; color:var(--ink-soft); background:var(--brand-bg); border-radius:.8rem; padding:.9rem 1rem; margin:1rem 0 0; }
 
   .tpl{ border:1px solid var(--line); border-radius:1rem; background:var(--bg); margin:1.3rem 0; overflow:hidden; }
-  .tpl-head{
-    display:flex; align-items:center; justify-content:space-between; gap:.6rem;
-    padding:.7rem .8rem .7rem 1rem; background:var(--surface-2); font-weight:800; font-size:1.02rem;
-  }
-  .copy-btn{
-    flex:none; border:2px solid var(--brand); background:var(--bg); color:var(--brand);
-    font-weight:800; font-size:.85rem; padding:.5rem .8rem; border-radius:.6rem;
-    cursor:pointer; min-height:2.4rem;
-  }
-  .copy-btn.copied{ background:var(--brand); color:var(--brand-ink); border-color:var(--brand); }
+  .tpl-head{ padding:.8rem 1rem; background:var(--surface-2); font-weight:800; font-size:1.02rem; }
   .tpl-body{ padding:1rem 1.1rem; }
-  .tpl-body .ask{ color:var(--ink-soft); margin:0; }
+  .tpl-body .ask{ color:var(--ink-soft); margin:0 0 .9rem; }
+
+  .copy-row{ display:flex; gap:.6rem; }
+  .copy-btn{
+    flex:1; border:2px solid var(--brand); background:var(--bg); color:var(--brand);
+    font-weight:800; font-size:.95rem; padding:.75rem .6rem; border-radius:.7rem;
+    cursor:pointer; min-height:2.9rem;
+  }
+  .copy-btn.copied{ background:var(--brand); color:var(--brand-ink); }
+
   details.tpl-toggle{ margin-top:.9rem; }
   details.tpl-toggle summary{
     cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:center; gap:.4rem;
     font-weight:800; color:var(--brand); background:var(--brand-bg);
-    border-radius:.7rem; padding:.8rem 1rem; min-height:2.9rem;
+    border-radius:.7rem; padding:.7rem 1rem; min-height:2.7rem;
   }
   details.tpl-toggle summary::-webkit-details-marker{ display:none; }
-  .tpl-full{ font-size:.92rem; white-space:pre-wrap; color:var(--ink); background:var(--bg); border:1px dashed var(--line); border-radius:.8rem; padding:1rem; margin-top:.9rem; max-height:20rem; overflow-y:auto; }
+  .preview-label{ font-size:.82rem; font-weight:800; color:var(--ink-faint); margin:.9rem 0 .3rem; }
+  .tpl-full{ font-size:.92rem; white-space:pre-wrap; color:var(--ink); background:var(--surface-2); border:1px dashed var(--line); border-radius:.8rem; padding:.9rem 1rem; margin:0; max-height:16rem; overflow-y:auto; }
+  .tpl-full.title-preview{ max-height:none; font-weight:700; }
 
   footer{ margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); font-size:.8rem; color:var(--ink-faint); }
 </style>
@@ -118,43 +120,42 @@
     <li>
       <div>
         <div class="t">① 민원 사이트 접속하기</div>
-        <div class="d">아래 버튼을 누르면 접수 사이트로 이동합니다.<br>
-          <a class="link-btn" href="https://www.suwon.go.kr/sw-www/www01/www01-01.jsp" target="_blank" rel="noopener">수원시 민원신청 페이지 (눌러주세요) ›</a>
-        </div>
+        <div class="d"><a class="link-btn" href="https://www.suwon.go.kr/sw-www/www01/www01-01.jsp" target="_blank" rel="noopener">수원시 민원신청 페이지 (눌러주세요) ›</a></div>
       </div>
     </li>
     <li>
       <div>
         <div class="t">② 본인 확인하기</div>
-        <div class="d">휴대폰 본인인증을 진행합니다. 화면이 하얗게 나오면 인증이 안 되는 것이니, 아이폰은 <strong>사파리</strong>, 갤럭시 등 안드로이드는 <strong>크롬</strong> 앱으로 다시 열어서 시도해보세요.</div>
+        <div class="d">화면 하얗게 나오는 오류 — 아이폰 사파리 / 갤럭시 크롬</div>
       </div>
     </li>
     <li>
       <div>
         <div class="t">③ 민원 내용 복사해서 붙여넣기</div>
-        <div class="d">아래 4가지 민원 중 원하는 것의 <strong>&lsquo;복사하기&rsquo;</strong> 버튼을 누르면 글이 자동으로 복사됩니다. 민원 신청란에 붙여넣기만 하면 됩니다. 여러 건을 한 번에 넣으셔도 좋습니다.</div>
+        <div class="d">복사하기 버튼 누르기</div>
       </div>
     </li>
     <li>
       <div>
         <div class="t">④ 제출하기</div>
-        <div class="d">본인 이름·주소·연락처를 넣고 제출 버튼을 누르면 끝입니다. 개인정보는 채팅방에 올리지 않으셔도 됩니다.</div>
       </div>
     </li>
   </ol>
 
   <div class="tpl">
-    <div class="tpl-head">
-      <span>민원 1 · 조합원 지위 승계·정보공개 제한 적법성 확인</span>
-      <button type="button" class="copy-btn" data-target="tpl-1">복사하기</button>
-    </div>
+    <div class="tpl-head">민원 1 · 조합원 지위 승계·정보공개 제한 적법성 확인</div>
     <div class="tpl-body">
       <p class="ask">신규 소유자의 조합원 지위 승계를 조합이 &lsquo;리모델링 동의&rsquo; 재서명 조건으로 막고 있는 것 아닌지, 정보공개도 개인정보를 핑계로 제한하는 것 아닌지 확인해달라는 민원입니다.</p>
+      <div class="copy-row">
+        <button type="button" class="copy-btn" data-target="tpl-1-title">민원 제목 복사하기</button>
+        <button type="button" class="copy-btn" data-target="tpl-1-body">민원 문구 복사하기</button>
+      </div>
       <details class="tpl-toggle">
-        <summary>전체 문구 보기 (눌러주세요)</summary>
-        <div class="tpl-full" id="tpl-1">신성신안쌍용진흥아파트 리모델링조합의 조합원 지위 승계·명부 변경·정보공개 처리의 적법성 확인 및 행정지도 요청
-
-수원시 영통구 소재 신성신안쌍용진흥아파트 리모델링주택조합의 조합원 지위 승계, 조합원 명부 변경 및 정보 제공 문제와 관련하여 관할 행정청의 명확한 법령 검토 및 행정지도를 요청드립니다.
+        <summary>전체 내용 보기 (눌러주세요)</summary>
+        <p class="preview-label">제목</p>
+        <div class="tpl-full title-preview" id="tpl-1-title">신성신안쌍용진흥아파트 리모델링조합의 조합원 지위 승계·명부 변경·정보공개 처리의 적법성 확인 및 행정지도 요청</div>
+        <p class="preview-label">문구</p>
+        <div class="tpl-full" id="tpl-1-body">수원시 영통구 소재 신성신안쌍용진흥아파트 리모델링주택조합의 조합원 지위 승계, 조합원 명부 변경 및 정보 제공 문제와 관련하여 관할 행정청의 명확한 법령 검토 및 행정지도를 요청드립니다.
 
 1. 관련 조합 회신문
 
@@ -284,15 +285,19 @@
   </div>
 
   <div class="tpl">
-    <div class="tpl-head">
-      <span>민원 2 · 회계 자료 공개 요청</span>
-      <button type="button" class="copy-btn" data-target="tpl-2">복사하기</button>
-    </div>
+    <div class="tpl-head">민원 2 · 회계 자료 공개 요청</div>
     <div class="tpl-body">
       <p class="ask">조합의 돈이 어디에 어떻게 쓰였는지 자료를 보여달라는 민원입니다.</p>
+      <div class="copy-row">
+        <button type="button" class="copy-btn" data-target="tpl-2-title">민원 제목 복사하기</button>
+        <button type="button" class="copy-btn" data-target="tpl-2-body">민원 문구 복사하기</button>
+      </div>
       <details class="tpl-toggle">
-        <summary>전체 문구 보기 (눌러주세요)</summary>
-        <div class="tpl-full" id="tpl-2">안녕하세요.
+        <summary>전체 내용 보기 (눌러주세요)</summary>
+        <p class="preview-label">제목</p>
+        <div class="tpl-full title-preview" id="tpl-2-title">신성신안쌍용신흥아파트 리모델링주택조합 회계감사 및 자금 관련 자료 공개·열람 요청</div>
+        <p class="preview-label">문구</p>
+        <div class="tpl-full" id="tpl-2-body">안녕하세요.
 신성신안쌍용신흥아파트 리모델링주택조합의 조합원으로서 회계감사 및 자금 관련 자료의 공개·열람에 대해 확인하고자 민원을 신청합니다.
 
 요청 자료
@@ -314,15 +319,19 @@
   </div>
 
   <div class="tpl">
-    <div class="tpl-head">
-      <span>민원 3 · 총회 절차 공정성 요청</span>
-      <button type="button" class="copy-btn" data-target="tpl-3">복사하기</button>
-    </div>
+    <div class="tpl-head">민원 3 · 총회 절차 공정성 요청</div>
     <div class="tpl-body">
       <p class="ask">투표와 개표를 공정하게 진행해달라는 민원입니다.</p>
+      <div class="copy-row">
+        <button type="button" class="copy-btn" data-target="tpl-3-title">민원 제목 복사하기</button>
+        <button type="button" class="copy-btn" data-target="tpl-3-body">민원 문구 복사하기</button>
+      </div>
       <details class="tpl-toggle">
-        <summary>전체 문구 보기 (눌러주세요)</summary>
-        <div class="tpl-full" id="tpl-3">수원시 영통구 신성신안쌍용진흥 아파트 리모델링주택조합의 분담금 관련 총회를 앞두고, 총회 의결 과정의 공정성과 투명성 확보를 요청드립니다.
+        <summary>전체 내용 보기 (눌러주세요)</summary>
+        <p class="preview-label">제목</p>
+        <div class="tpl-full title-preview" id="tpl-3-title">신성신안쌍용진흥아파트 리모델링주택조합 분담금 총회 의결 과정 공정성·투명성 확보 요청</div>
+        <p class="preview-label">문구</p>
+        <div class="tpl-full" id="tpl-3-body">수원시 영통구 신성신안쌍용진흥 아파트 리모델링주택조합의 분담금 관련 총회를 앞두고, 총회 의결 과정의 공정성과 투명성 확보를 요청드립니다.
 
 일시 : 9월 12일
 
@@ -352,15 +361,19 @@
   </div>
 
   <div class="tpl">
-    <div class="tpl-head">
-      <span>민원 4 · 정족수 기준 사전 확인 요청</span>
-      <button type="button" class="copy-btn" data-target="tpl-4">복사하기</button>
-    </div>
+    <div class="tpl-head">민원 4 · 정족수 기준 사전 확인 요청</div>
     <div class="tpl-body">
       <p class="ask">총회가 성립되는 &lsquo;최소 인원 기준&rsquo;을 총회 전에 미리 밝혀달라는 민원입니다.</p>
+      <div class="copy-row">
+        <button type="button" class="copy-btn" data-target="tpl-4-title">민원 제목 복사하기</button>
+        <button type="button" class="copy-btn" data-target="tpl-4-body">민원 문구 복사하기</button>
+      </div>
       <details class="tpl-toggle">
-        <summary>전체 문구 보기 (눌러주세요)</summary>
-        <div class="tpl-full" id="tpl-4">신성신안쌍용진흥아파트 리모델링주택조합의 조합원으로서 2026년 9월 12일 예정된 분담금 관련 총회의 의결정족수 및 조합원 수 산정기준에 대하여 사전 확인을 요청드립니다.
+        <summary>전체 내용 보기 (눌러주세요)</summary>
+        <p class="preview-label">제목</p>
+        <div class="tpl-full title-preview" id="tpl-4-title">신성신안쌍용진흥아파트 리모델링주택조합 분담금 총회 의결정족수 및 조합원 수 산정기준 사전 확인 요청</div>
+        <p class="preview-label">문구</p>
+        <div class="tpl-full" id="tpl-4-body">신성신안쌍용진흥아파트 리모델링주택조합의 조합원으로서 2026년 9월 12일 예정된 분담금 관련 총회의 의결정족수 및 조합원 수 산정기준에 대하여 사전 확인을 요청드립니다.
 
 이번 총회는 조합원에게 상당한 재산상 부담을 발생시킬 수 있는 중요한 총회인 만큼, 총회가 개최된 이후 의결정족수에 관한 분쟁이 발생하지 않도록 총회 전에 정확한 기준을 확인할 필요가 있다고 생각합니다.
 
@@ -438,8 +451,6 @@
       btn.addEventListener('click', function(){
         var target = document.getElementById(btn.getAttribute('data-target'));
         var text = target.textContent;
-        var details = btn.closest('.tpl').querySelector('details');
-        if (details) details.open = true;
         function showCopied(){
           var original = btn.textContent;
           btn.textContent = '복사됨!';
