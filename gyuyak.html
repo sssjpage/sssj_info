@@ -1,0 +1,106 @@
+<title>불합리한 조합 규정 · 신나무실 5단지</title>
+<style>
+  :root{
+    --bg:#ffffff; --surface-2:#f3f6f9;
+    --ink:#101828; --ink-soft:#43536a; --ink-faint:#6b7c90;
+    --line:#dbe3ea; --stop:#c1440e;
+    --brand:#1f4d7a; --brand-bg:#e9f0f7; --brand-ink:#eaf2fa;
+    --fs-base:18px;
+  }
+  @media (min-width:420px){ :root{ --fs-base:19px; } }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0b1720; --surface-2:#182c3c;
+      --ink:#eef3f7; --ink-soft:#b7c6d4; --ink-faint:#8ea0b2;
+      --line:#274255; --stop:#ff7a45;
+      --brand:#6fb1e8; --brand-bg:#152c3e; --brand-ink:#0c2338;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0b1720; --surface-2:#182c3c;
+    --ink:#eef3f7; --ink-soft:#b7c6d4; --ink-faint:#8ea0b2;
+    --line:#274255; --stop:#ff7a45;
+    --brand:#6fb1e8; --brand-bg:#152c3e; --brand-ink:#0c2338;
+  }
+  html{ font-size:var(--fs-base); }
+  html.big-text{ --fs-base:23px; }
+  @media (min-width:420px){ html.big-text{ --fs-base:25px; } }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    font-weight:500; line-height:1.75; -webkit-font-smoothing:antialiased;
+  }
+  h1{ text-wrap:balance; font-weight:900; color:var(--ink); }
+  :focus-visible{ outline:3px solid var(--brand); outline-offset:2px; }
+  @media (prefers-reduced-motion: reduce){ *{ transition:none !important; } }
+
+  .fontbar{
+    position:sticky; top:0; z-index:5;
+    display:flex; align-items:center; justify-content:center; gap:.6rem;
+    background:var(--surface-2); border-bottom:1px solid var(--line);
+    padding:.6rem 1rem;
+  }
+  .fontbar-label{ font-size:.85rem; color:var(--ink-soft); font-weight:700; margin-right:.2rem; }
+  .fontbar-btn{
+    border:2px solid var(--line); background:var(--bg); color:var(--ink);
+    border-radius:.6rem; padding:.5rem 1rem; font-weight:800; font-size:.95rem;
+    min-height:2.6rem; cursor:pointer;
+  }
+  .fontbar-btn[aria-pressed="true"]{ background:var(--brand); border-color:var(--brand); color:var(--brand-ink); }
+
+  .page{ max-width:34rem; margin:0 auto; padding:1.4rem 1.15rem 4rem; }
+  .back{ display:inline-flex; align-items:center; gap:.3rem; color:var(--brand); font-weight:800; text-decoration:none; font-size:.98rem; margin-bottom:1.2rem; }
+  h1{ font-size:1.55rem; margin:0 0 .8rem; }
+  .lede{ color:var(--ink-soft); margin:0 0 1.6rem; }
+
+  .empty{
+    border:1px dashed var(--line); border-radius:1rem; background:var(--surface-2);
+    padding:1.8rem 1.4rem; text-align:center;
+  }
+  .empty p{ margin:0 0 .5rem; font-weight:700; }
+  .empty p:last-child{ margin:0; color:var(--ink-soft); font-weight:500; font-size:.95rem; }
+
+  footer{ margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); font-size:.8rem; color:var(--ink-faint); }
+</style>
+
+<div class="fontbar" role="group" aria-label="글자 크기 선택">
+  <span class="fontbar-label">글자 크기</span>
+  <button type="button" id="btn-normal" class="fontbar-btn" aria-pressed="true">보통</button>
+  <button type="button" id="btn-big" class="fontbar-btn" aria-pressed="false">크게</button>
+</div>
+
+<div class="page">
+  <a class="back" href="index.html">‹ 처음으로</a>
+  <h1>불합리한 조합 규정</h1>
+  <p class="lede">조합 정관(규약) 중 조합원에게 불리하거나 문제가 될 수 있는 조항을 정리하는 페이지입니다. 현재 변호사 자문을 통해 검토 중입니다.</p>
+
+  <div class="empty">
+    <p>아직 정리된 내용이 없습니다.</p>
+    <p>내용이 확정되는 대로 이 페이지에 채워드릴게요.</p>
+  </div>
+
+  <footer>
+    <p>이 페이지는 리모델링에 반대하는 조합원들이 자율적으로 만든 안내 자료이며, 조합의 공식 입장이 아닙니다.</p>
+  </footer>
+</div>
+
+<script>
+  (function(){
+    var html = document.documentElement;
+    var btnN = document.getElementById('btn-normal');
+    var btnB = document.getElementById('btn-big');
+    function setSize(big){
+      html.classList.toggle('big-text', big);
+      btnN.setAttribute('aria-pressed', String(!big));
+      btnB.setAttribute('aria-pressed', String(big));
+      try{ localStorage.setItem('sssj-fontsize', big ? 'big' : 'normal'); }catch(e){}
+    }
+    btnN.addEventListener('click', function(){ setSize(false); });
+    btnB.addEventListener('click', function(){ setSize(true); });
+    try{
+      if (localStorage.getItem('sssj-fontsize') === 'big') setSize(true);
+    }catch(e){}
+  })();
+</script>

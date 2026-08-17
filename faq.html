@@ -1,0 +1,122 @@
+<title>궁금한 점들 · 신나무실 5단지</title>
+<style>
+  :root{
+    --bg:#ffffff; --surface-2:#f3f6f9;
+    --ink:#101828; --ink-soft:#43536a; --ink-faint:#6b7c90;
+    --line:#dbe3ea; --stop:#c1440e;
+    --brand:#1f4d7a; --brand-ink:#eaf2fa;
+    --fs-base:18px;
+  }
+  @media (min-width:420px){ :root{ --fs-base:19px; } }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0b1720; --surface-2:#182c3c;
+      --ink:#eef3f7; --ink-soft:#b7c6d4; --ink-faint:#8ea0b2;
+      --line:#274255; --stop:#ff7a45;
+      --brand:#6fb1e8; --brand-ink:#0c2338;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0b1720; --surface-2:#182c3c;
+    --ink:#eef3f7; --ink-soft:#b7c6d4; --ink-faint:#8ea0b2;
+    --line:#274255; --stop:#ff7a45;
+    --brand:#6fb1e8; --brand-ink:#0c2338;
+  }
+  html{ font-size:var(--fs-base); }
+  html.big-text{ --fs-base:23px; }
+  @media (min-width:420px){ html.big-text{ --fs-base:25px; } }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    font-weight:500; line-height:1.75; -webkit-font-smoothing:antialiased;
+  }
+  h1{ text-wrap:balance; font-weight:900; color:var(--ink); }
+  :focus-visible{ outline:3px solid var(--brand); outline-offset:2px; }
+  @media (prefers-reduced-motion: reduce){ *{ transition:none !important; } }
+
+  .fontbar{
+    position:sticky; top:0; z-index:5;
+    display:flex; align-items:center; justify-content:center; gap:.6rem;
+    background:var(--surface-2); border-bottom:1px solid var(--line);
+    padding:.6rem 1rem;
+  }
+  .fontbar-label{ font-size:.85rem; color:var(--ink-soft); font-weight:700; margin-right:.2rem; }
+  .fontbar-btn{
+    border:2px solid var(--line); background:var(--bg); color:var(--ink);
+    border-radius:.6rem; padding:.5rem 1rem; font-weight:800; font-size:.95rem;
+    min-height:2.6rem; cursor:pointer;
+  }
+  .fontbar-btn[aria-pressed="true"]{ background:var(--brand); border-color:var(--brand); color:var(--brand-ink); }
+
+  .page{ max-width:34rem; margin:0 auto; padding:1.4rem 1.15rem 4rem; }
+  .back{ display:inline-flex; align-items:center; gap:.3rem; color:var(--brand); font-weight:800; text-decoration:none; font-size:.98rem; margin-bottom:1.2rem; }
+  h1{ font-size:1.55rem; margin:0 0 1.4rem; }
+
+  .faq-item{ padding:1.1rem 0; border-bottom:1px solid var(--line); }
+  .faq-item .q{ font-weight:800; margin:0 0 .5rem; display:flex; gap:.5rem; }
+  .faq-item .q .qmark{ color:var(--stop); flex:none; }
+  .faq-item .a{ color:var(--ink-soft); margin:0; padding-left:1.55em; }
+
+  footer{ margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); font-size:.8rem; color:var(--ink-faint); }
+</style>
+
+<div class="fontbar" role="group" aria-label="글자 크기 선택">
+  <span class="fontbar-label">글자 크기</span>
+  <button type="button" id="btn-normal" class="fontbar-btn" aria-pressed="true">보통</button>
+  <button type="button" id="btn-big" class="fontbar-btn" aria-pressed="false">크게</button>
+</div>
+
+<div class="page">
+  <a class="back" href="index.html">‹ 처음으로</a>
+  <h1>궁금한 점들</h1>
+
+  <div class="faq-item">
+    <p class="q"><span class="qmark">Q.</span>처음 왔는데 뭐부터 하면 되나요?</p>
+    <p class="a">맨 앞 페이지의 2가지(무제출·무응답)만 지켜주셔도 충분합니다. 여유가 되시면 &lsquo;민원 제기하는 방법&rsquo;의 민원 ①도 넣어주세요.</p>
+  </div>
+  <div class="faq-item">
+    <p class="q"><span class="qmark">Q.</span>이미 서류에 서명했어요. 늦은 걸까요?</p>
+    <p class="a">아닙니다. 취소(철회)할 수 있는지 지금 변호사에게 확인하고 있습니다. 확인되는 대로 채팅방에 안내해 드리겠습니다.</p>
+  </div>
+  <div class="faq-item">
+    <p class="q"><span class="qmark">Q.</span>&lsquo;실명방&rsquo;은 어떻게 들어가나요?</p>
+    <p class="a">신원을 확인하는 절차가 있는 방입니다. 먼저 오픈채팅방에서 활동해 주시면 확인 후 안내드립니다.</p>
+  </div>
+  <div class="faq-item">
+    <p class="q"><span class="qmark">Q.</span>왜 굳이 실명으로 활동하나요?</p>
+    <p class="a">조합 측 관계자의 유입을 막고, 서로 신뢰할 수 있는 정보만 공유하기 위해서입니다. 오픈채팅방은 최초 홍보·유입 용도로만 활용하고 있습니다.</p>
+  </div>
+  <div class="faq-item">
+    <p class="q"><span class="qmark">Q.</span>전단지를 나눠주거나 집을 방문해도 괜찮나요?</p>
+    <p class="a">자신의 재산과 관련된 일에 반대 의견을 밝히는 것은 정당한 권리입니다. 다만 정확한 법적 범위는 자문 결과가 나오는 대로 다시 안내드리겠습니다.</p>
+  </div>
+  <div class="faq-item">
+    <p class="q"><span class="qmark">Q.</span>왜 총회에 참석하면 안 되나요?</p>
+    <p class="a">총회는 정해진 인원이 채워져야 성립합니다. 반대하러 가시더라도 &lsquo;참석&rsquo;으로 계산되면 오히려 총회가 열리는 데 도움을 주는 셈이 됩니다.</p>
+  </div>
+
+  <footer>
+    <p>이 페이지는 리모델링에 반대하는 조합원들이 자율적으로 만든 안내 자료이며, 조합의 공식 입장이 아닙니다.</p>
+  </footer>
+</div>
+
+<script>
+  (function(){
+    var html = document.documentElement;
+    var btnN = document.getElementById('btn-normal');
+    var btnB = document.getElementById('btn-big');
+    function setSize(big){
+      html.classList.toggle('big-text', big);
+      btnN.setAttribute('aria-pressed', String(!big));
+      btnB.setAttribute('aria-pressed', String(big));
+      try{ localStorage.setItem('sssj-fontsize', big ? 'big' : 'normal'); }catch(e){}
+    }
+    btnN.addEventListener('click', function(){ setSize(false); });
+    btnB.addEventListener('click', function(){ setSize(true); });
+    try{
+      if (localStorage.getItem('sssj-fontsize') === 'big') setSize(true);
+    }catch(e){}
+  })();
+</script>

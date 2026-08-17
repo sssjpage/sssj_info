@@ -81,6 +81,15 @@
 
   .hero-note{ font-size:1.15rem; font-weight:800; color:var(--ink); margin:2rem 0 0; }
 
+  .nav-links{ display:flex; flex-direction:column; gap:.7rem; margin:2rem 0 0; }
+  .nav-btn{
+    display:flex; align-items:center; justify-content:space-between; gap:.6rem;
+    background:var(--surface-2); border:1px solid var(--line); border-radius:1rem;
+    padding:1.1rem 1.2rem; text-decoration:none; color:var(--ink);
+    font-weight:800; font-size:1.05rem; min-height:3.2rem; text-align:left;
+  }
+  .nav-btn .arrow{ color:var(--brand); font-size:1.3rem; flex:none; }
+
   footer{ margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); font-size:.8rem; color:var(--ink-faint); }
 </style>
 
@@ -107,6 +116,12 @@
   </div>
 
   <p class="hero-note">이웃에게도 꼭 전해주세요.</p>
+
+  <div class="nav-links">
+    <a class="nav-btn" href="minwon.html"><span>민원 제기하는 방법</span><span class="arrow" aria-hidden="true">›</span></a>
+    <a class="nav-btn" href="gyuyak.html"><span>불합리한 조합 규정</span><span class="arrow" aria-hidden="true">›</span></a>
+    <a class="nav-btn" href="faq.html"><span>궁금한 점들</span><span class="arrow" aria-hidden="true">›</span></a>
+  </div>
 
   <footer>
     <p>이 페이지는 리모델링에 반대하는 조합원들이 자율적으로 만든 안내 자료이며, 조합의 공식 입장이 아닙니다.</p>
