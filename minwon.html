@@ -82,8 +82,20 @@
 
   .section-label{ font-size:1.15rem; font-weight:900; color:var(--ink); margin:2.4rem 0 1.2rem; padding-top:1.6rem; border-top:2px solid var(--line); }
 
-  .tpl{ border:1px solid var(--line); border-radius:1.1rem; background:var(--bg); margin:1.7rem 0; overflow:hidden; box-shadow:0 2px 10px -6px rgba(16,24,40,.25); }
-  .tpl-head{ padding:1rem 1.1rem; background:var(--brand); color:var(--brand-ink); font-weight:800; font-size:1.03rem; }
+  .tpl{ border:1px solid var(--line); border-radius:1.1rem; background:var(--bg); margin:1.9rem 0; overflow:hidden; box-shadow:0 2px 10px -6px rgba(16,24,40,.25); }
+  .tpl-head{
+    padding:1rem 1.1rem; background:var(--brand); color:var(--brand-ink);
+    font-weight:800; font-size:1.03rem;
+    display:flex; align-items:center; gap:.7rem;
+  }
+  .tpl-num{
+    flex:none; width:2rem; height:2rem; border-radius:50%;
+    background:rgba(255,255,255,.24);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:900; font-size:1rem;
+  }
+  .tpl--campaign .tpl-head{ background:var(--stop); color:var(--stop-ink); }
+  .tpl--campaign .tpl-body .ask{ border-left-color:var(--stop); }
   .tpl-body{ padding:1.2rem 1.15rem 1.3rem; }
   .tpl-body .ask{
     color:var(--ink); font-weight:600; margin:0 0 1.1rem;
@@ -159,10 +171,10 @@
     </li>
   </ol>
 
-  <h2 class="section-label">아래 민원 중 골라서 접수하세요</h2>
+  <h2 class="section-label">아래 5가지 중 원하는 것을 골라 접수하세요</h2>
 
-  <div class="tpl">
-    <div class="tpl-head">캠페인 · 분담금총회 불참·미서명 인증</div>
+  <div class="tpl tpl--campaign">
+    <div class="tpl-head"><span class="tpl-num">1</span><span>분담금총회 불참·미서명 인증 캠페인</span></div>
     <div class="tpl-body">
       <p class="ask">나는 분담금총회에 참석하지 않고 서명하지도 않겠다는 의사를 온라인 민원으로 인증하는 캠페인입니다. 동·호수만 본인 것으로 바꿔서 올려주세요.</p>
       <div class="copy-row">
@@ -185,7 +197,7 @@
   </div>
 
   <div class="tpl">
-    <div class="tpl-head">민원 1 · 조합원 지위 승계·정보공개 제한 적법성 확인</div>
+    <div class="tpl-head"><span class="tpl-num">2</span><span>조합원 지위 승계·정보공개 제한 적법성 확인</span></div>
     <div class="tpl-body">
       <p class="ask">신규 소유자의 조합원 지위 승계를 조합이 &lsquo;리모델링 동의&rsquo; 재서명 조건으로 막고 있는 것 아닌지, 정보공개도 개인정보를 핑계로 제한하는 것 아닌지 확인해달라는 민원입니다.</p>
       <div class="copy-row">
@@ -327,7 +339,7 @@
   </div>
 
   <div class="tpl">
-    <div class="tpl-head">민원 2 · 회계 자료 공개 요청</div>
+    <div class="tpl-head"><span class="tpl-num">3</span><span>회계 자료 공개 요청</span></div>
     <div class="tpl-body">
       <p class="ask">조합의 돈이 어디에 어떻게 쓰였는지 자료를 보여달라는 민원입니다.</p>
       <div class="copy-row">
@@ -361,7 +373,7 @@
   </div>
 
   <div class="tpl">
-    <div class="tpl-head">민원 3 · 총회 절차 공정성 요청</div>
+    <div class="tpl-head"><span class="tpl-num">4</span><span>총회 절차 공정성 요청</span></div>
     <div class="tpl-body">
       <p class="ask">투표와 개표를 공정하게 진행해달라는 민원입니다.</p>
       <div class="copy-row">
@@ -403,7 +415,7 @@
   </div>
 
   <div class="tpl">
-    <div class="tpl-head">민원 4 · 정족수 기준 사전 확인 요청</div>
+    <div class="tpl-head"><span class="tpl-num">5</span><span>정족수 기준 사전 확인 요청</span></div>
     <div class="tpl-body">
       <p class="ask">총회가 성립되는 &lsquo;최소 인원 기준&rsquo;을 총회 전에 미리 밝혀달라는 민원입니다.</p>
       <div class="copy-row">
