@@ -92,11 +92,20 @@
   .section-label{ font-size:1.15rem; font-weight:900; color:var(--ink); margin:2.4rem 0 1.2rem; padding-top:1.6rem; border-top:2px solid var(--line); }
 
   .tpl{ border:1px solid var(--line); border-radius:1.1rem; background:var(--bg); margin:2.6rem 0; overflow:hidden; box-shadow:0 2px 10px -6px rgba(16,24,40,.25); }
+  .tpl > details{ margin:0; }
+  .tpl > details > summary{ list-style:none; cursor:pointer; }
+  .tpl > details > summary::-webkit-details-marker{ display:none; }
+  .tpl > details > summary::marker{ display:none; content:""; }
   .tpl-head{
     padding:1rem 1.1rem; background:var(--brand); color:var(--brand-ink);
     font-weight:800; font-size:1.03rem;
     display:flex; align-items:center; gap:.7rem;
   }
+  .tpl-chevron{
+    margin-left:auto; flex:none; font-size:1.3rem; font-weight:900;
+    transition:transform .2s ease;
+  }
+  .tpl > details[open] .tpl-chevron{ transform:rotate(90deg); }
   .tpl-num{
     flex:none; width:2rem; height:2rem; border-radius:50%;
     background:rgba(255,255,255,.24);
@@ -186,8 +195,9 @@
   <h2 class="section-label">아래 7가지 중 원하는 것을 골라 접수하세요</h2>
 
   <div class="tpl">
-    <div class="tpl-head"><span class="tpl-num">1</span><span>분담금총회 불참·미서명 인증 캠페인</span></div>
-    <div class="tpl-body">
+    <details>
+      <summary class="tpl-head"><span class="tpl-num">1</span><span>분담금총회 불참·미서명 인증 캠페인</span><span class="tpl-chevron">›</span></summary>
+      <div class="tpl-body">
       <p class="ask">나는 분담금총회에 참석하지 않고 서명하지도 않겠다는 의사를 온라인 민원으로 인증하는 캠페인입니다. 동·호수만 본인 것으로 바꿔서 올려주세요.</p>
       <div class="copy-row">
         <button type="button" class="copy-btn" data-target="tpl-camp-title">민원 제목 복사하기</button>
@@ -206,11 +216,13 @@
       </details>
       <p class="ask" style="margin-top:1rem;">자제분·가족분들께도 수원시 온라인 민원을 넣어달라고 부탁해주세요. 가족이 대신 접수하셔도 됩니다. 위 문구 마지막 줄에 &ldquo;조합원 ○○○의 아들/딸 ○○○입니다.&rdquo; 한 줄만 추가해서 올려주시면 됩니다.</p>
     </div>
+    </details>
   </div>
 
   <div class="tpl">
-    <div class="tpl-head"><span class="tpl-num">2</span><span>조합원 지위 승계·정보공개 제한 적법성 확인</span></div>
-    <div class="tpl-body">
+    <details>
+      <summary class="tpl-head"><span class="tpl-num">2</span><span>조합원 지위 승계·정보공개 제한 적법성 확인</span><span class="tpl-chevron">›</span></summary>
+      <div class="tpl-body">
       <p class="ask">신규 소유자의 조합원 지위 승계를 조합이 &lsquo;리모델링 동의&rsquo; 재서명 조건으로 막고 있는 것 아닌지, 정보공개도 개인정보를 핑계로 제한하는 것 아닌지 확인해달라는 민원입니다.</p>
       <div class="copy-row">
         <button type="button" class="copy-btn" data-target="tpl-1-title">민원 제목 복사하기</button>
@@ -348,11 +360,13 @@
 위법하거나 부적절한 운영이 확인될 경우 조합에 시정을 요구하는 추가 행정지도도 함께 요청드립니다.</div>
       </details>
     </div>
+    </details>
   </div>
 
   <div class="tpl">
-    <div class="tpl-head"><span class="tpl-num">3</span><span>회계 자료 공개 요청</span></div>
-    <div class="tpl-body">
+    <details>
+      <summary class="tpl-head"><span class="tpl-num">3</span><span>회계 자료 공개 요청</span><span class="tpl-chevron">›</span></summary>
+      <div class="tpl-body">
       <p class="ask">조합의 돈이 어디에 어떻게 쓰였는지 자료를 보여달라는 민원입니다.</p>
       <div class="copy-row">
         <button type="button" class="copy-btn" data-target="tpl-2-title">민원 제목 복사하기</button>
@@ -382,11 +396,13 @@
 감사합니다.</div>
       </details>
     </div>
+    </details>
   </div>
 
   <div class="tpl">
-    <div class="tpl-head"><span class="tpl-num">4</span><span>총회 절차 공정성 요청</span></div>
-    <div class="tpl-body">
+    <details>
+      <summary class="tpl-head"><span class="tpl-num">4</span><span>총회 절차 공정성 요청</span><span class="tpl-chevron">›</span></summary>
+      <div class="tpl-body">
       <p class="ask">투표와 개표를 공정하게 진행해달라는 민원입니다.</p>
       <div class="copy-row">
         <button type="button" class="copy-btn" data-target="tpl-3-title">민원 제목 복사하기</button>
@@ -424,11 +440,13 @@
 아울러 해당 총회에 대하여 수원시가 실시할 수 있는 관리·감독 또는 행정지도 등의 구체적인 범위와 조치 가능 사항에 대해서도 답변하여 주시기 바랍니다.</div>
       </details>
     </div>
+    </details>
   </div>
 
   <div class="tpl">
-    <div class="tpl-head"><span class="tpl-num">5</span><span>정족수 기준 사전 확인 요청</span></div>
-    <div class="tpl-body">
+    <details>
+      <summary class="tpl-head"><span class="tpl-num">5</span><span>정족수 기준 사전 확인 요청</span><span class="tpl-chevron">›</span></summary>
+      <div class="tpl-body">
       <p class="ask">총회가 성립되는 &lsquo;최소 인원 기준&rsquo;을 총회 전에 미리 밝혀달라는 민원입니다.</p>
       <div class="copy-row">
         <button type="button" class="copy-btn" data-target="tpl-4-title">민원 제목 복사하기</button>
@@ -474,11 +492,13 @@
 감사합니다.</div>
       </details>
     </div>
+    </details>
   </div>
 
   <div class="tpl">
-    <div class="tpl-head"><span class="tpl-num">6</span><span>정보공개 서약서 적법성 및 15일 이내 처리 행정지도 요청</span></div>
-    <div class="tpl-body">
+    <details>
+      <summary class="tpl-head"><span class="tpl-num">6</span><span>정보공개 서약서 적법성 및 15일 이내 처리 행정지도 요청</span><span class="tpl-chevron">›</span></summary>
+      <div class="tpl-body">
       <p class="ask">조합이 정보공개 시 요구하는 서약서의 과도한 조항(문안 대신 전달, 민형사상 책임 운운)이 적법한지, 그리고 조합원명부 등 자료를 15일 이내에 제공하도록 확인해달라는 민원입니다.</p>
       <div class="copy-row">
         <button type="button" class="copy-btn" data-target="tpl-5-title">민원 제목 복사하기</button>
@@ -512,11 +532,13 @@
 이전에도 조합원명부를 개인정보 운운하며 거부한 사례가 있기에 15일 이내에 자료를 제공하도록 행정지도 부탁드리며 미제공시 위반 사실을 다시 신고하도록 하겠습니다.</div>
       </details>
     </div>
+    </details>
   </div>
 
   <div class="tpl">
-    <div class="tpl-head"><span class="tpl-num">7</span><span>입찰공고 정보 공유 관련 민원</span></div>
-    <div class="tpl-body">
+    <details>
+      <summary class="tpl-head"><span class="tpl-num">7</span><span>입찰공고 정보 공유 관련 민원</span><span class="tpl-chevron">›</span></summary>
+      <div class="tpl-body">
       <p class="ask">외부 사이트(한국리모델링협회)에만 입찰공고를 올리고 조합원에게는 별도 공개·안내를 하지 않은 것 아닌지, 입찰결과·업체선정 자료가 조합원에게 제대로 공개되었는지 확인해달라는 민원입니다.</p>
       <div class="copy-row">
         <button type="button" class="copy-btn" data-target="tpl-6-title">민원 제목 복사하기</button>
@@ -568,6 +590,7 @@
 감사합니다.</div>
       </details>
     </div>
+    </details>
   </div>
 
   <footer>
