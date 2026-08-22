@@ -115,7 +115,42 @@
   .nav-btn .arrow{ color:var(--brand); font-size:1.3rem; flex:none; }
 
   footer{ margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); font-size:.8rem; color:var(--ink-faint); }
+
+  .modal-overlay{
+    position:fixed; inset:0; z-index:50;
+    background:rgba(0,0,0,.82);
+    display:flex; align-items:center; justify-content:center;
+    padding:1.2rem;
+  }
+  .modal-overlay[hidden]{ display:none; }
+  .modal-box{
+    max-width:26rem; width:100%; max-height:92vh;
+    display:flex; flex-direction:column; align-items:center;
+    overflow-y:auto;
+  }
+  .modal-title{
+    color:#fff; font-weight:900; font-size:1.2rem; text-align:center;
+    margin:0 0 .8rem;
+  }
+  .modal-box img{
+    width:100%; border-radius:.8rem; display:block;
+  }
+  .modal-close{
+    margin-top:1rem; border:none; border-radius:.8rem;
+    background:#fff; color:#101828; font-weight:900; font-size:1rem;
+    padding:.85rem 1.6rem; min-height:3rem; cursor:pointer;
+    display:flex; align-items:center; gap:.5rem;
+  }
+  .modal-close .timer{ color:var(--stop); font-weight:900; }
 </style>
+
+<div class="modal-overlay" id="signModal" hidden>
+  <div class="modal-box">
+    <p class="modal-title">✍️ 서명받는 장소</p>
+    <img src="images/sign-location.jpg" alt="서명받는 장소 안내 포스터 - 찐 반대, 여기 이외에는 절대 싸인 금지">
+    <button type="button" class="modal-close" id="signModalClose">닫기 <span class="timer" id="signModalTimer">(10)</span></button>
+  </div>
+</div>
 
 <div class="fontbar" role="group" aria-label="글자 크기 선택">
   <span class="fontbar-label">글자 크기</span>
@@ -130,7 +165,7 @@
 
   <p class="clarify-note">재건축을 하기 위해 반대를 하자는 것이 아닙니다. 무리한 분담금 인상과 불합리한 진행 방식에 대한 문제 제기입니다.</p>
 
-  <p class="clarify-note small">매일 업데이트됩니다. 다시 한번 읽어주세요<br>마지막 수정 시간 <span class="highlight">08/21 16:47</span></p>
+  <p class="clarify-note small">매일 업데이트됩니다. 다시 한번 읽어주세요<br>마지막 수정 시간 <span class="highlight">08/22 16:33</span></p>
 
   <div class="rules">
     <div class="rule-card">
@@ -157,7 +192,7 @@
   </div>
 
   <footer>
-    <p>최종 수정 08/21 16:47</p>
+    <p>최종 수정 08/22 16:33</p>
   </footer>
 </div>
 
@@ -187,5 +222,43 @@
     try{
       if (localStorage.getItem('sssj-fontsize') === 'big') setSize(true);
     }catch(e){}
+  })();
+
+  (function(){
+    var KEY = 'sssj-sign-modal-closed-at';
+    var ONE_DAY = 24 * 60 * 60 * 1000;
+    var overlay = document.getElementById('signModal');
+    var closeBtn = document.getElementById('signModalClose');
+    var timerEl = document.getElementById('signModalTimer');
+    var countdown = 10;
+    var intervalId = null;
+
+    function shouldShow(){
+      try{
+        var last = localStorage.getItem(KEY);
+        if (!last) return true;
+        return (Date.now() - parseInt(last, 10)) > ONE_DAY;
+      }catch(e){ return true; }
+    }
+
+    function closeModal(){
+      overlay.hidden = true;
+      if (intervalId) clearInterval(intervalId);
+      try{ localStorage.setItem(KEY, String(Date.now())); }catch(e){}
+    }
+
+    if (shouldShow()){
+      overlay.hidden = false;
+      intervalId = setInterval(function(){
+        countdown--;
+        if (countdown <= 0){
+          closeModal();
+        } else {
+          timerEl.textContent = '(' + countdown + ')';
+        }
+      }, 1000);
+    }
+
+    closeBtn.addEventListener('click', closeModal);
   })();
 </script>
