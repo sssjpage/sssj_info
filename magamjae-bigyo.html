@@ -1,0 +1,297 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7S59BHDL13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7S59BHDL13');
+</script>
+<title>마감재 비교 (5단지 vs 8단지) · 신나무실 5단지</title>
+<style>
+  :root{
+    --bg:#ffffff; --surface-2:#f3f6f9;
+    --ink:#101828; --ink-soft:#43536a; --ink-faint:#6b7c90;
+    --line:#dbe3ea; --stop:#c1440e; --go:#1a7a4c;
+    --brand:#1f4d7a; --brand-bg:#e9f0f7; --brand-ink:#eaf2fa;
+    --fs-base:23px;
+  }
+  @media (min-width:420px){ :root{ --fs-base:25px; } }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0b1720; --surface-2:#182c3c;
+      --ink:#eef3f7; --ink-soft:#b7c6d4; --ink-faint:#8ea0b2;
+      --line:#274255; --stop:#ff7a45; --go:#4ad391;
+      --brand:#6fb1e8; --brand-bg:#152c3e; --brand-ink:#0c2338;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0b1720; --surface-2:#182c3c;
+    --ink:#eef3f7; --ink-soft:#b7c6d4; --ink-faint:#8ea0b2;
+    --line:#274255; --stop:#ff7a45; --go:#4ad391;
+    --brand:#6fb1e8; --brand-bg:#152c3e; --brand-ink:#0c2338;
+  }
+  html{ font-size:var(--fs-base); }
+  html.big-text{ --fs-base:29px; }
+  @media (min-width:420px){ html.big-text{ --fs-base:32px; } }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    font-weight:500; line-height:1.75; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2{ text-wrap:balance; font-weight:900; color:var(--ink); }
+  :focus-visible{ outline:3px solid var(--brand); outline-offset:2px; }
+  @media (prefers-reduced-motion: reduce){ *{ transition:none !important; } }
+
+  .fontbar{
+    position:sticky; top:0; z-index:5;
+    display:flex; align-items:center; justify-content:center; gap:.6rem;
+    background:var(--surface-2); border-bottom:1px solid var(--line);
+    padding:.6rem 1rem;
+  }
+  .fontbar-label{ font-size:.85rem; color:var(--ink-soft); font-weight:700; margin-right:.2rem; }
+  .fontbar-btn{
+    border:2px solid var(--line); background:var(--bg); color:var(--ink);
+    border-radius:.6rem; padding:.5rem 1rem; font-weight:800; font-size:.95rem;
+    min-height:2.6rem; cursor:pointer;
+  }
+  .fontbar-btn[aria-pressed="true"]{ background:var(--brand); border-color:var(--brand); color:var(--brand-ink); }
+
+  .page{ max-width:34rem; margin:0 auto; padding:1.4rem 1.15rem 4rem; }
+  .back{ display:inline-flex; align-items:center; gap:.3rem; color:var(--brand); font-weight:800; text-decoration:none; font-size:.98rem; margin-bottom:1.2rem; }
+  h1{ font-size:1.4rem; margin:0 0 .6rem; }
+  .lede{ color:var(--ink-soft); margin:0 0 1rem; font-weight:600; }
+
+  .vs-row{ display:flex; align-items:center; gap:.6rem; margin:0 0 1.6rem; }
+  .vs-tag{ flex:1; text-align:center; font-weight:900; border-radius:.8rem; padding:.6rem .5rem; font-size:1rem; }
+  .vs-tag.a{ background:rgba(193,68,14,.14); color:var(--stop); }
+  .vs-tag.b{ background:rgba(26,122,76,.14); color:var(--go); }
+  .vs-mid{ flex:none; font-weight:900; color:var(--ink-faint); font-size:.85rem; }
+
+  .disclaimer{
+    font-size:.85rem; font-weight:600; color:var(--ink-soft);
+    background:var(--surface-2); border:1px solid var(--line);
+    border-radius:.9rem; padding:.85rem 1rem; margin:0 0 2rem;
+  }
+
+  h2.sec{ font-size:1.15rem; margin:2.2rem 0 .3rem; }
+  .sec-sub{ color:var(--ink-soft); font-size:.9rem; font-weight:600; margin:0 0 1rem; }
+
+  .compare-grid{ display:flex; flex-direction:column; gap:1rem; margin:0 0 .6rem; }
+  .compare-card{ border-radius:1rem; padding:1.1rem 1.2rem; border:2px solid; }
+  .compare-card.a{ background:rgba(193,68,14,.06); border-color:var(--stop); }
+  .compare-card.b{ background:rgba(26,122,76,.06); border-color:var(--go); }
+  .compare-card .tag{
+    display:inline-block; font-weight:900; font-size:.82rem; color:#fff;
+    border-radius:2rem; padding:.2rem .7rem; margin:0 0 .6rem;
+  }
+  .compare-card.a .tag{ background:var(--stop); }
+  .compare-card.b .tag{ background:var(--go); }
+  .compare-card ul{ margin:0; padding-left:1.1rem; }
+  .compare-card li{ margin:0 0 .4rem; font-weight:700; color:var(--ink); }
+  .compare-card li:last-child{ margin-bottom:0; }
+  .compare-card .note{ margin:.5rem 0 0; font-size:.85rem; font-weight:600; color:var(--ink-faint); }
+
+  .src{ font-size:.78rem; color:var(--ink-faint); margin:.5rem 0 0; }
+
+  .table-wrap{ overflow-x:auto; margin:1.2rem 0 1.6rem; border:1px solid var(--line); border-radius:1rem; }
+  table.compare2{ border-collapse:collapse; width:100%; min-width:26rem; font-size:.9rem; }
+  table.compare2 th, table.compare2 td{
+    padding:.75rem .8rem; text-align:center; border-bottom:1px solid var(--line);
+  }
+  table.compare2 th:first-child, table.compare2 td:first-child{ text-align:left; }
+  table.compare2 thead th{ background:var(--ink); color:#fff; font-weight:800; }
+  table.compare2 thead th.a{ background:var(--stop); }
+  table.compare2 thead th.b{ background:var(--go); }
+  table.compare2 tbody th{ background:var(--surface-2); font-weight:800; }
+  table.compare2 .x{ color:var(--stop); font-weight:900; }
+  table.compare2 .o{ color:var(--go); font-weight:900; }
+  table.compare2 tbody tr:last-child th, table.compare2 tbody tr:last-child td{ border-bottom:none; }
+
+  .conclusion{
+    background:var(--surface-2); border:2px solid var(--brand);
+    border-radius:1.1rem; padding:1.3rem 1.3rem; margin:1.6rem 0 0;
+  }
+  .conclusion p{ margin:0 0 .5rem; font-weight:800; color:var(--ink); }
+  .conclusion p:last-child{ margin-bottom:0; }
+
+  footer{ margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); font-size:.8rem; color:var(--ink-faint); }
+</style>
+
+<div class="fontbar" role="group" aria-label="글자 크기 선택">
+  <span class="fontbar-label">글자 크기</span>
+  <button type="button" id="btn-normal" class="fontbar-btn" aria-pressed="true">보통</button>
+  <button type="button" id="btn-big" class="fontbar-btn" aria-pressed="false">크게</button>
+</div>
+
+<div class="page">
+  <a class="back" href="index.html">‹ 처음으로</a>
+  <h1>같은 리모델링인데,<br>마감재는 왜 다를까요?</h1>
+  <p class="lede">조합 총회책자의 마감재 리스트를 항목별로 비교했습니다.</p>
+
+  <div class="vs-row">
+    <span class="vs-tag a">5단지</span>
+    <span class="vs-mid">VS</span>
+    <span class="vs-tag b">8단지</span>
+  </div>
+
+  <p class="disclaimer">※ 아래 내용은 각 단지 총회책자에 실제로 기재된 마감재 리스트 원문을 항목별로 정리한 참고 자료입니다. 최신 내용은 각 조합의 총회책자로 다시 확인해주세요.</p>
+
+  <h2 class="sec">01 · 주방 가전</h2>
+  <p class="sec-sub">기본 제공 품목 자체가 다릅니다</p>
+  <div class="compare-grid">
+    <div class="compare-card a">
+      <span class="tag">5단지</span>
+      <ul>
+        <li>가스쿡탑 3구</li>
+        <li>음식물탈수기</li>
+      </ul>
+      <p class="note">식기세척기·전기오븐·주방TV 항목 없음</p>
+    </div>
+    <div class="compare-card b">
+      <span class="tag">8단지</span>
+      <ul>
+        <li>인덕션+가스 하이브리드 쿡탑</li>
+        <li>빌트인 식기세척기(삼성/LG)</li>
+        <li>빌트인 전기오븐(전자레인지 겸용)</li>
+        <li>10인치 풀터치 주방TV</li>
+      </ul>
+    </div>
+  </div>
+  <p class="src">쌍용진흥 44p / 두산·우성·한신 148p</p>
+
+  <h2 class="sec">02 · 욕실</h2>
+  <p class="sec-sub">같은 &lsquo;양변기&rsquo;도 사양이 다릅니다</p>
+  <div class="compare-grid">
+    <div class="compare-card a">
+      <span class="tag">5단지</span>
+      <ul>
+        <li>준원피스 양변기</li>
+        <li>세라믹 욕조</li>
+      </ul>
+      <p class="note">욕실장·절수형 수전 브랜드 표기 없음</p>
+    </div>
+    <div class="compare-card b">
+      <span class="tag">8단지</span>
+      <ul>
+        <li>비데일체형 양변기 (대림바스급)</li>
+        <li>수납장 + 거울도어 욕실장</li>
+        <li>에코3단 절수형 세면수전 (대림바스급)</li>
+      </ul>
+    </div>
+  </div>
+  <p class="src">쌍용진흥 45p / 두산·우성·한신 152p</p>
+
+  <h2 class="sec">03 · 스마트홈</h2>
+  <p class="sec-sub">&lsquo;적용&rsquo;이라고만 쓰여 있으면 사양을 알 수 없습니다</p>
+  <div class="compare-grid">
+    <div class="compare-card a">
+      <span class="tag">5단지</span>
+      <ul>
+        <li>월패드 &lsquo;적용&rsquo; (화면크기 등 사양 없음)</li>
+        <li>대기전력차단 스위치방식</li>
+      </ul>
+    </div>
+    <div class="compare-card b">
+      <span class="tag">8단지</span>
+      <ul>
+        <li>13인치 터치스크린 홈네트워크 월패드</li>
+        <li>스마트스위치 (조명+대기전력)</li>
+        <li>실별 디지털 온도조절기</li>
+        <li>세대환기시스템(기계식)</li>
+      </ul>
+    </div>
+  </div>
+  <p class="src">쌍용진흥 45~46p / 두산·우성·한신 149p</p>
+
+  <h2 class="sec">04 · 창호·마감재 등급</h2>
+  <p class="sec-sub">브랜드·등급을 밝히는지 여부가 다릅니다</p>
+  <div class="compare-grid">
+    <div class="compare-card a">
+      <span class="tag">5단지</span>
+      <ul>
+        <li>&ldquo;엔지니어드 스톤&rdquo;이라고만 표기</li>
+        <li>&ldquo;~급&rdquo; 표기만 있고 구체적 제조사 없음</li>
+      </ul>
+    </div>
+    <div class="compare-card b">
+      <span class="tag">8단지</span>
+      <ul>
+        <li>로이복층 이중창 — LX하우시스급</li>
+        <li>디딤판 — 엔지니어드스톤 칸스톤급</li>
+        <li>욕실 — 대림바스급</li>
+        <li>후드 — 홈쿠벤급</li>
+      </ul>
+    </div>
+  </div>
+  <p class="src">쌍용진흥 44p / 두산·우성·한신 147~148p</p>
+
+  <h2 class="sec">05 · 커뮤니티 시설</h2>
+  <p class="sec-sub">가장 큰 차이가 나는 항목입니다</p>
+  <div class="compare-grid">
+    <div class="compare-card a">
+      <span class="tag">5단지</span>
+      <ul>
+        <li>&ldquo;기본등급 마감수준 적용&rdquo;</li>
+      </ul>
+      <p class="note">이 한 줄이 전부 — 시설 구성·개별 마감 정보 없음</p>
+    </div>
+    <div class="compare-card b">
+      <span class="tag">8단지</span>
+      <ul>
+        <li>수영장·골프라운지(GDR 시스템)</li>
+        <li>피트니스클럽·사우나/샤워실</li>
+        <li>독서실·주민회의실·작은도서관</li>
+        <li>시설별 바닥·벽·천정 마감까지 명시</li>
+      </ul>
+    </div>
+  </div>
+  <p class="src">쌍용진흥 45p / 두산·우성·한신 154~166p</p>
+
+  <h2 class="sec">한눈에 보기 · 항목별 정보 공개 수준</h2>
+  <p class="sec-sub">&ldquo;구체적 브랜드·사양이 표에 명시되어 있는가?&rdquo;</p>
+  <div class="table-wrap">
+    <table class="compare2">
+      <thead>
+        <tr><th>항목</th><th class="a">5단지</th><th class="b">8단지</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">주방 가전 사양</th><td class="x">✕</td><td class="o">○</td></tr>
+        <tr><th scope="row">욕실 브랜드급 표기</th><td class="x">✕</td><td class="o">○</td></tr>
+        <tr><th scope="row">스마트홈 세부 사양</th><td class="x">✕</td><td class="o">○</td></tr>
+        <tr><th scope="row">창호 브랜드 명시</th><td class="x">✕</td><td class="o">○</td></tr>
+        <tr><th scope="row">커뮤니티 시설별 마감</th><td class="x">✕</td><td class="o">○</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">두 단지 총회책자 마감재 리스트 원문 기준</p>
+
+  <div class="conclusion">
+    <p>같은 리모델링 조합원인데, 어떤 단지는 브랜드와 등급을 구체적으로 밝히고 어떤 단지는 한두 단어로 뭉뚱그려 표기되어 있습니다.</p>
+    <p>우리 단지 총회책자를 다시 펼쳐, 마감재 리스트에 브랜드·등급·세부사양이 실제로 명시되어 있는지 함께 확인해봅시다.</p>
+  </div>
+
+  <footer>
+  </footer>
+</div>
+
+<script>
+  (function(){
+    var html = document.documentElement;
+    var btnN = document.getElementById('btn-normal');
+    var btnB = document.getElementById('btn-big');
+    function setSize(big){
+      html.classList.toggle('big-text', big);
+      btnN.setAttribute('aria-pressed', String(!big));
+      btnB.setAttribute('aria-pressed', String(big));
+      try{ localStorage.setItem('sssj-fontsize', big ? 'big' : 'normal'); }catch(e){}
+    }
+    btnN.addEventListener('click', function(){ setSize(false); });
+    btnB.addEventListener('click', function(){ setSize(true); });
+    try{
+      if (localStorage.getItem('sssj-fontsize') === 'big') setSize(true);
+    }catch(e){}
+  })();
+</script>
