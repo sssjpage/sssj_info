@@ -120,6 +120,32 @@
   .conclusion p{ margin:0; font-weight:900; font-size:1.15rem; color:var(--ink); }
   .conclusion .sub{ margin-top:.5rem; font-weight:600; font-size:.9rem; color:var(--ink-soft); }
 
+  .strategy-card{
+    border-radius:1.1rem; padding:1.1rem 1.2rem; margin:0 0 1.1rem; border:2px solid;
+  }
+  .strategy-card.weak{ background:rgba(193,68,14,.06); border-color:var(--stop); }
+  .strategy-card.strong{ background:rgba(26,122,76,.06); border-color:var(--go); }
+  .strategy-card .num{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:1.8rem; height:1.8rem; border-radius:50%; color:#fff;
+    font-weight:900; font-size:.95rem; margin-right:.5rem;
+  }
+  .strategy-card.weak .num{ background:var(--stop); }
+  .strategy-card.strong .num{ background:var(--go); }
+  .strategy-card .title{ font-weight:900; font-size:1.02rem; color:var(--ink); }
+  .strategy-card .desc{ margin:.5rem 0 0; font-weight:600; color:var(--ink-soft); font-size:.92rem; }
+
+  .punchline{
+    text-align:center; font-weight:900; font-size:1.1rem; color:var(--brand);
+    margin:1.4rem 0; padding:0 .5rem;
+  }
+
+  .side-note{
+    font-size:.85rem; font-weight:600; color:var(--ink-soft);
+    background:var(--surface-2); border:1px solid var(--line);
+    border-radius:.8rem; padding:.8rem .95rem; margin:1.4rem 0 0;
+  }
+
   footer{ margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); font-size:.8rem; color:var(--ink-faint); }
 </style>
 
@@ -173,6 +199,35 @@
     <p class="line">설령 600명 전원이 찬성했더라도</p>
     <p class="result">➡️ 총회 자체가 성립되지 않아 무산</p>
   </div>
+
+  <h2 class="sec">쉽게 설명드릴게요!</h2>
+  <p class="lede" style="margin-bottom:1.2rem;">우리 조합원이 1,373명이라고 하면, 총회를 열려면 일단 <b>687명 이상이 참여</b>해야 합니다. 여기서 참여는 <b>현장 참석 + 서면결의서 제출</b> 둘 다 포함됩니다.</p>
+
+  <div class="example no">
+    <span class="tag">📌 600명만 참여했다면?</span>
+    <p class="result">➡️ 600명 전부 찬성해도 총회를 열 수 없습니다.</p>
+  </div>
+
+  <div class="example ok">
+    <span class="tag">📌 687명이 참여했다면?</span>
+    <p class="result">➡️ 총회가 열리고, 그중 344명만 찬성해도 통과될 수 있습니다.</p>
+  </div>
+
+  <p class="lede" style="margin:1.6rem 0 1rem;">그래서 반대하는 사람 입장에서는 두 가지 방법이 있습니다.</p>
+
+  <div class="strategy-card weak">
+    <p class="title"><span class="num">1</span>참석해서 반대표를 던지는 방법</p>
+    <p class="desc">나는 &lsquo;참석자&rsquo;로 잡히기 때문에 총회를 열어주는 인원(687명)에는 포함됩니다.</p>
+  </div>
+
+  <div class="strategy-card strong">
+    <p class="title"><span class="num">2</span>아예 참석하지 않는 방법</p>
+    <p class="desc">총회를 여는 데 필요한 687명에도 포함되지 않습니다.</p>
+  </div>
+
+  <p class="punchline">&ldquo;반대표를 늘리는 것보다,<br>참석자 수 자체를 줄이는 전략입니다.&rdquo;</p>
+
+  <p class="side-note">※ 서면결의서 제출도 &lsquo;참석&rsquo;에 포함되므로, 무참석 전략이라면 서면결의서도 제출하지 않아야 합니다.</p>
 
   <div class="conclusion">
     <p>그래서 &lsquo;반대 서명&rsquo;보다 &lsquo;불참&rsquo;이 더 효과적입니다.</p>
